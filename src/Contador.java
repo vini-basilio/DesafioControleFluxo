@@ -28,13 +28,17 @@ public class Contador {
 
 	static void contar(int parametroUm, int parametroDois) throws ParametrosInvalidosException {
 
-		if (parametroUm > parametroDois)
+		if (parametroUm > parametroDois) {
 			throw new ParametrosInvalidosException(null, "O segundo parâmetro deve ser maior que o primeiro");
+		} else if (parametroUm == parametroDois) {
+			System.out.println("Ambos valores são iguais!");
+		} else {
+			int contagem = parametroDois - parametroUm;
 
-		int contagem = parametroDois - parametroUm;
-
-		for (int i = 1; i <= contagem; i++) {
-			System.out.println("Imprimindo o número " + i);
+			for (int i = 1; i <= contagem; i++) {
+				System.out.println("Imprimindo o número " + i);
+			}
 		}
+
 	}
 }
